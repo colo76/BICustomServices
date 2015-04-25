@@ -7,7 +7,6 @@
                            http://www.springframework.org/schema/context 
                            http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<beans>
 		<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
 			<property name="assembler" ref="assembler" />
 			<property name="namingStrategy" ref="namingStrategy" />
@@ -33,4 +32,4 @@
 			<property name="enabled" value="true" />
 		</bean>
 
-	</beans> 
+</beans> 
