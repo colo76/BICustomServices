@@ -1,0 +1,19 @@
+Para crear el proyecto
+
+http://www.mkyong.com/maven/how-do-use-maven-to-create-a-dynamic-web-project-in-eclipse/
+
+http://stackoverflow.com/questions/15065093/an-internal-error-occurred-during-updating-maven-project-unsupported-iclassp
+
+http://snipplr.com/view/3775/minimal-webxml-webapp-descriptor-version-25/
+
+http://stackoverflow.com/questions/20114945/cxf-web-service-client-cannot-create-a-secure-xmlinputfactory
+
+Para bug de OpenLDAP
+http://stackoverflow.com/questions/20673186/getting-error-for-setting-password-feild-when-creating-generic-user-account-phpl	
+
+Para correr maven con weblogic
+http://docs.oracle.com/cd/E17904_01/web.1111/e13702/maven_deployer.htm#DEPGD388
+http://stackoverflow.com/questions/17406499/weblogic-maven-deploy
+
+Por el problema del parser de XML
+JAVA_OPTIONSXX / -Dorg.apache.cxf.stax.allowInsecureParser=1

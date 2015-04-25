@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-application xmlns="http://www.bea.com/ns/weblogic/90">
+	<application-param>
+		<param-name>webapp.encoding.default</param-name>
+		<param-value>UTF-8</param-value>
+	</application-param>
+	<prefer-application-packages>
+		<package-name>javax.jws.*</package-name>
+		<package-name>javax.servlet.*</package-name>
+		<package-name>javax.xml.stream.*</package-name>
+		<package-name>org.apache.cxf.*</package-name>
+       <package-name>com.ctc.wstx.*</package-name>
+	</prefer-application-packages>
+
+
+	<xml>
+		<parser-factory>
+			<saxparser-factory>
+				com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl
+			</saxparser-factory>
+			<document-builder-factory>
+				com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl
+			</document-builder-factory>
+			<transformer-factory>
+				com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl
+			</transformer-factory>
+		</parser-factory>
+	</xml>
+</weblogic-application>

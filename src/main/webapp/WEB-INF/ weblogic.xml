@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-web-app>  
+<context-root>/WLWebServices</context-root>
+  <container-descriptor>  
+    <prefer-web-inf-classes>true</prefer-web-inf-classes>  
+    
+    <prefer-application-resources>  
+        <resource-name>META-INF/services/javax.xml.ws.spi.Provider</resource-name>  
+    </prefer-application-resources>  
+    <prefer-application-packages>  
+	     <package-name>org.python.core.*</package-name> 
+		 <package-name>com.ctc.wstx.*</package-name>
+    </prefer-application-packages>  
+    </container-descriptor>  
+ </weblogic-web-app> 
