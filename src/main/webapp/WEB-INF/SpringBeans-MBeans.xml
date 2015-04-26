@@ -7,29 +7,36 @@
                            http://www.springframework.org/schema/context 
                            http://www.springframework.org/schema/context/spring-context.xsd">
 
-		<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
-			<property name="assembler" ref="assembler" />
-			<property name="namingStrategy" ref="namingStrategy" />
-			<property name="autodetect" value="true" />
-		</bean>
+	<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
+		<property name="assembler" ref="assembler" />
+		<property name="namingStrategy" ref="namingStrategy" />
+		<property name="autodetect" value="true" />
+		<property name="server" ref="jmxServerRuntime" />
+	</bean>
 
-		<bean id="jmxAttributeSource"
-			class="org.springframework.jmx.export.annotation.AnnotationJmxAttributeSource" />
+	<bean id="jmxServerRuntime" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jmx/runtime" />
+	</bean>
 
-		<!-- will create management interface using annotation metadata -->
-		<bean id="assembler"
-			class="org.springframework.jmx.export.assembler.MetadataMBeanInfoAssembler">
-			<property name="attributeSource" ref="jmxAttributeSource" />
-		</bean>
 
-		<!-- will pick up the ObjectName from the annotation -->
-		<bean id="namingStrategy"
-			class="org.springframework.jmx.export.naming.MetadataNamingStrategy">
-			<property name="attributeSource" ref="jmxAttributeSource" />
-		</bean>
+	<!-- will create management interface using annotation metadata -->
+	<bean id="assembler"
+		class="org.springframework.jmx.export.assembler.MetadataMBeanInfoAssembler">
+		<property name="attributeSource" ref="jmxAttributeSource" />
+	</bean>
 
-		<bean id="relinquerBean" class="ar.gov.mecon.dgsiaf.bi.mbeans.RelinquerMBean">
-			<property name="enabled" value="true" />
-		</bean>
+	<bean id="jmxAttributeSource"
+		class="org.springframework.jmx.export.annotation.AnnotationJmxAttributeSource" />
+
+
+	<!-- will pick up the ObjectName from the annotation -->
+	<bean id="namingStrategy"
+		class="org.springframework.jmx.export.naming.MetadataNamingStrategy">
+		<property name="attributeSource" ref="jmxAttributeSource" />
+	</bean>
+
+	<bean id="relinquerBean" class="ar.gov.mecon.dgsiaf.bi.mbeans.RelinquerMBean">
+		<property name="enabled" value="true" />
+	</bean>
 
 </beans> 
