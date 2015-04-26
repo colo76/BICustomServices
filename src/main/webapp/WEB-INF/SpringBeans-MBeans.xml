@@ -15,6 +15,9 @@
 	</bean>
 
 	<bean id="jmxServerRuntime" class="org.springframework.jndi.JndiObjectFactoryBean">
+		 <!--Ubicamos por JNDi el WebLogic Runtime MBean Server para que el MBean forme
+		  parte del servidor de MBeans del Weblogic y no dela JVM subyacete
+		   -->
 		<property name="jndiName" value="java:comp/env/jmx/runtime" />
 	</bean>
 

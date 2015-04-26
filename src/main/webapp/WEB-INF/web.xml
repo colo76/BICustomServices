@@ -19,6 +19,11 @@
   <listener>
     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
   </listener>
+  
+  <listener>
+  <listener-class>ar.gov.mecon.dgsiaf.bi.mbeans.sample.listener.MyListener</listener-class>
+  </listener>
+  
   <servlet>
     <servlet-name>CXFServlet</servlet-name>
     <servlet-class>
